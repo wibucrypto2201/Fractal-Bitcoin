@@ -69,3 +69,19 @@ sudo journalctl -u fractald -fo cat
 ```
 echo 'export WALLETW="walletname"' >> $HOME/.bashrc && source $HOME/.bashrc
 ```
+
+```
+cd /root/fractald-release/fractald-x86_64-linux-gnu/bin
+```
+
+```
+./bitcoin-wallet -wallet="$WALLETW" -legacy create
+```
+
+# Lấy Privatekey
+```
+cd /root/fractald-release/fractald-x86_64-linux-gnu/bin
+./bitcoin-wallet -wallet=/root/.bitcoin/wallets/$WALLETW/wallet.dat -dumpfile=/root/.bitcoin/wallets/$WALLETW/MyPK.dat dump
+cd
+cat .bitcoin/wallets/$WALLETW/MyPK.dat
+```
